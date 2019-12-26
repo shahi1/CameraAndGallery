@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -36,8 +37,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnC=findViewById(R.id.btnC);
         imageview=findViewById(R.id.ivpp);
-        checkPermission();
-        loadCamera();
+
+        btnC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkPermission();
+                loadCamera();
+            }
+        });
 
     }
 
